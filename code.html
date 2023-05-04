@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function submit() {
+            var select_1 = document.getElementById("select_1").value
+            var select_2 = document.getElementById("select_2").value
+            var select_3 = document.getElementById("select_3").value
+            var input_1 = document.getElementById("input_1").value
+            var ajax_result = document.getElementById("ajax_result")
+            var error = document.getElementById("error")
+            if (
+                select_1 === "2022" && select_2 === "الإستثنائية" && select_3 === "الشهادة المتوسطة" &&
+                input_1 === "51357") {
+                
+                ajax_result.style.display = "block"
+                error.style.display = "none"
+
+            } else {
+                
+                ajax_result.style.display = "none"
+                error.style.display = "block"
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="d-flex align-items-center justify-content-flex-start flex-column first_container">
+        <h5 class="text-center">نتائج الإمتحانات الأولية</h5>
+        <hr>
+        <span>تتمنى لكم حظًا موفقًا</span>
+        <div class="d-flex button_container">
+            <a class="first_btn ">نتائج الطلاب</a>
+            <a class="second_btn">نتائج المدرسة</a>
+        </div>
+        <div class="container row">
+            <div class="col-6 row div_container_1 ">
+                <label class="label_1">عام * </label>
+                <select id="select_1">
+                    <option>2016</option>
+                    <option>2017</option>
+                    <option>2018</option>
+                    <option>2019</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                    <option>2022</option>
+                    <option>2023</option>
+                </select>
+            </div>
+            <div class="col-6 row div_container_2 ">
+                <label class="label_2">الدورة *</label>
+                <select id="select_2">
+                    <option>العادية</option>
+                    <option>الإستثنائية</option>
+                    <option>الإستثنائية الخاصة</option>
+                    <option>الخاصةالخاصة</option>
+                </select>
+            </div>
+            <div class="col-6 row div_container_3 ">
+                <label class="label_3">الصف الدراسي *</label>
+                <select id="select_3">
+                    <option>الشهادة المتوسطة</option>
+                    <option>الآداب والإنسانيات</option>
+                    <option>الإجتماع والإقتصاد</option>
+                    <option>العلوم العامة</option>
+                    <option>علوم الحياة</option>
+
+                </select>
+            </div>
+            <div class="col-6 row div_container_4 ">
+                <label class="label_4">رقم المرشح *</label>
+                <input type="text" id="input_1">
+            </div>
+        </div>
+        <div class="d-flex button_container">
+            <a class="first_btn " type="submit" onclick="submit()">بحث</a>
+        </div>
+        <div class="container">
+            <div class="row animated fadeInUp" id="ajax_result" style="display: none;">
+                <div class="col-12">
+                    <div class="inside_exams_title search-title">نتيجة البحث</div>
+                </div>
+                <div id="student_infos" class="col-12">
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>عام</b></div>
+                            <div class="tag_select  eng_lang">2022</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>الدورة</b></div>
+                            <div class="tag_select ">الإستثنائية</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>رقم الطالب</b></div>
+                            <div class="tag_select ">51357</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>الصف الدراسي</b></div>
+                            <div class="tag_select ">الشهادة المتوسطة</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>الإسم</b></div>
+                            <div class="tag_select ">مرتضى محسن علي</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>النتيجة</b></div>
+                            <div class="tag_select  green"><b>ناجح</b></div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"> <b>المعدل</b></div>
+                            <div class="tag_select  eng_lang">3.444</div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 d-flex">
+                            <div class="text_select ms-3"><b>المرتبة</b></div>
+                            <div class="tag_select  eng_lang">95</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="student_notes" class="col-12">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>المادة</th>
+                                <th>المعدل</th>
+                                <th>العلامة</th>
+                            </tr>
+                            <tr class="gray">
+                                <td>اللغة العربية</td>
+                                <td class="grade">45 /</td>
+                                <td>25</td>
+                            </tr>
+                            <tr>
+                                <td>اللغة الأجنبية</td>
+                                <td class="grade">35 /</td>
+                                <td>35</td>
+                            </tr>
+                            <tr class="gray">
+                                <td>رياضيات</td>
+                                <td class="grade">50 /</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>كيمياء</td>
+                                <td class="grade">25 /</td>
+                                <td>25</td>
+                            </tr>
+                            <tr class="gray">
+                                <td>جغرافيا</td>
+                                <td class="grade">25 /</td>
+                                <td>25</td>
+                            </tr>
+                            <tr class="total">
+                                <td class="tot">المجموع</td>
+                                <td class="grade"> <b>180</b></td>
+                                <td><b>110</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="text-center mt-4 green" id="error" style="display: none;">
+                لقد حدث خطأ ما. الرجاء المحاولة لاحقاً.
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    © جميع الحقوق محفوظة وزازة التربية والتعليم الغالي 2018
+</footer>
+
+</html>
